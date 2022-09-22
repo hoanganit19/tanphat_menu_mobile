@@ -1,0 +1,144 @@
+*{
+    padding: 0;
+    margin: 0;
+}
+
+html{
+    font-size: 16px;
+}
+
+ul, ol{
+    list-style: none;
+    padding-left: 0;
+}
+
+a{
+    text-decoration: none;
+}
+
+
+.header{
+    padding: 15px 0;
+}
+
+.primary-menu{
+    background: green;
+}
+
+.primary-menu > ul{
+    display: flex;
+}
+
+.primary-menu > ul > li a{
+    display: block;
+    color: #fff;
+    padding: 5px 20px;
+}
+
+.primary-menu > ul > li+li > a{
+    border-left: 1px solid #fff;
+}
+
+.primary-menu > ul > li:hover > a, .primary-menu > ul > li.current > a{
+    background: red !important;
+}
+
+.primary-menu > ul li{
+    position: relative;
+}
+
+.primary-menu > ul li a{
+    border-bottom: 1px dotted #fff;
+}
+
+.primary-menu > ul li a:hover{
+    background: violet;
+}
+
+.primary-menu > ul ul{
+    position: absolute;
+    background: blueviolet;
+    top: 100%;
+    display: none;
+    min-width: 200px;
+}
+
+.primary-menu > ul ul ul {
+    left: 100%;
+    top: 0;
+}
+
+.primary-menu > ul li:hover > ul{
+    display: block;
+}
+
+
+.primary-menu > ul li > i{
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    right: 5px;
+    color: #fff;
+    font-size: .9rem;
+}
+
+.primary-menu > ul li.has-children a{
+    padding-right: 25px;
+}
+
+.primary-menu .menu-toggle{
+    display: none;
+}
+
+.primary-menu input[type="checkbox"]{
+    display: none;
+}
+
+@media all and (max-width: 768px){
+    .primary-menu .menu-toggle{
+        display: inline-block;
+        background: transparent;
+        color: #fff;
+        font-size: 1.5rem;
+        border: 1px solid #fff;
+        padding: 5px 10px;
+    }
+
+    .primary-menu > ul{
+        display: none;
+        flex-direction: column;
+    }
+
+    .primary-menu > ul > li > a{
+        border-left: none !important;
+    }
+
+    .primary-menu{
+        padding: 15px;
+    }
+
+    .primary-menu input[type="checkbox"]:checked ~ ul{
+        display: flex;
+    }
+
+    .primary-menu > ul ul{
+        position: static;
+    }
+
+    .primary-menu > ul li:hover > ul{
+        display: none;
+    }
+
+    .primary-menu > ul ul.open{
+        display: block !important;
+    }
+
+    .primary-menu > ul li > i{
+        top: 10px;
+        transform: translateY(0);
+    }
+
+    .primary-menu > ul > li > i{
+        transform: rotate(-90deg);
+    }
+}
